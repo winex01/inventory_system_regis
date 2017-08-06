@@ -1,5 +1,5 @@
 <?php
-  // Author: winnie damayo
+  // Author: winnie damayo :)
  ?>
 
 <!DOCTYPE html>

@@ -1,4 +1,5 @@
 <?php
+# delete all from the your previous code and copy and replace with this
 require_once('../class/Sales.php');
 
 $date = $_GET['date'];

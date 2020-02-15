@@ -1,4 +1,4 @@
-<?php
+<?php 
 class Connection{
 
 	protected $isConn;
@@ -6,8 +6,8 @@ class Connection{
 	protected $transaction;
 
 								//un phpmyadmin    pass phpmyadmin     ip 				dbname
-	public function __construct($username="root", $password ="password", $host="localhost", $dbname="regis", $options = []){
-
+	public function __construct($username="root", $password ="", $host="localhost", $dbname="regis", $options = []){
+		
 		$this->isConn = TRUE;
 		try{
 			$this->datab = new PDO("mysql:host={$host};  dbname={$dbname}; charset=utf8", $username, $password, $options);
@@ -17,11 +17,11 @@ class Connection{
 			//echo 'Connected Successfully!!!';
 
 		}catch(PDOException $e){
-			throw new Exception($e->getMessage());
+			throw new Exception($e->getMessage());			
 		}
 
 	}//endDefaultConstructor
-
+ 
 
 	//disconnect from db
 	public function Disconnect(){
@@ -30,7 +30,7 @@ class Connection{
 	}//endDisconnectFunction
 
 
-
+	
 
 
 }//endClassDatabase

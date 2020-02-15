@@ -194,7 +194,7 @@ $('#del-stock').click(function(event) {
 	/* Act on the event */
 	var check = 0;
 	 $('input[type=checkbox]:checked').each(function(index) {
-		check++;
+		check++;        
     });
 	 if(check == 0){
 	 	alert('Please Select Row!');
@@ -232,7 +232,7 @@ $('.del-expired').click(function(event) {
 			$('#modal-message').find('#msg-body').text('Removess Successfully!')
 			$('#modal-message').modal('show');
 		}//end finish
-
+		
 	}//end if
 });
 
@@ -426,7 +426,7 @@ $(document).on('submit', '#form-order', function(event) {
 				}
 			});
 	}//end change < 0
-
+	
 });//form order
 
 
@@ -483,7 +483,7 @@ function dailySales(date){
 			error:function(){
 				eMsg(474);
 			}
-		});
+		});	
 }
 
 
@@ -503,5 +503,8 @@ $(document).on('change', '#dailyDate', function(event) {
 $('#printBut').click(function(event) {
 	/* Act on the event */
 	var date = $('#dailyDate').val();
-	window.open('data/print-sales.php?date='+date,'name','width=600,height=400');
+	window.open('data/print-sales.php?date='+date,'name','width=600,height=400');	
 });
+
+
+

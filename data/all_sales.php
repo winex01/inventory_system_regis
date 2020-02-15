@@ -1,5 +1,4 @@
-<?php
-# delete all from the your previous code and copy and replace with this :D . . . 
+<?php 
 require_once('../class/Sales.php');
 
 $date = $_GET['date'];
@@ -23,11 +22,11 @@ $dailySales = $sales->daily_sales($date);
                 </tr>
             </thead>
             <tbody>
-            <?php
+            <?php 
                 $total = 0;
                 foreach($dailySales as $ds):
-                $subTotal = $ds['price'] * $ds['qty'];
-                $total += $subTotal;
+                $subTotal = number_format($ds['price'] * $ds['qty'], 2);   
+                $total += $subTotal; 
             ?>
                 <tr>
                     <td><?= $ds['item_code']; ?></td>
@@ -37,7 +36,7 @@ $dailySales = $sales->daily_sales($date);
                     <td><?= $ds['type']; ?></td>
                     <td align="center"><?= number_format($ds['price'],2); ?></td>
                     <td align="center"><?= $ds['qty']; ?></td>
-                    <td align="center"><?= number_format($subTotal,2);; ?></td>
+                    <td align="center"><?= $subTotal; ?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
@@ -51,8 +50,8 @@ $dailySales = $sales->daily_sales($date);
                 <td align="right"><strong>TOTAL:</strong></td>
                 <td align="center">
                     <strong><?= number_format($total,2); ?></strong>
+                </td>
             </tr>
-          </td>
         </table>
 </div>
 
@@ -67,6 +66,6 @@ $dailySales = $sales->daily_sales($date);
     });
 </script>
 
-<?php
+<?php 
 $sales->Disconnect();
  ?>

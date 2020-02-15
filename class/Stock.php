@@ -43,11 +43,11 @@ class Stock extends Database implements iStock {
 
 	public function all_stockGroup()
 	{
-		$sql = "SELECT s.stock_id,i.item_id,i.item_name, i.item_price,SUM(stock_qty) as qty
+		$sql = "SELECT s.stock_id,i.item_id,i.item_name, i.item_price, SUM(s.stock_qty) as qty
 				FROM stock s 
 				INNER JOIN item i
 				ON s.item_id = i.item_id
-				GROUP BY s.item_id
+				GROUP BY s.stock_id,i.item_id,i.item_name, i.item_price
 				ORDER BY i.item_name ASC";
 		return $this->getRows($sql);
 	}//end all_stockGroup
